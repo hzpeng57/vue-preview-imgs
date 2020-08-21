@@ -63,7 +63,9 @@ options = {
     share: false,   // 是否显示分享按钮
     fullscreen: false,   // 是否显示全屏按钮
     showArrow: false,   // 是否显示左右箭头
+    showHideOpacity: false, // 开始和结束时是否使用透明效果过渡
     images: [], // 要预览图片信息组成的数组，参考上面示例。更多信息参考https://photoswipe.com/
+    usePosition: false, // 设置为true时，参数images的每一项都要加上el参数，值为对应图片的DOM元素，开始和结束时从DOM元素的位置开始缩放
 }
 ```
 
