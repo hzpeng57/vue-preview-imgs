@@ -1,7 +1,11 @@
 {
   "name": "vue-preview-imgs",
+  "description": "A picture preview plugin for the Vue2",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hzpeng57/vue-preview-imgs"
+  },
   "version": "0.2.1",
-  "description": "",
   "main": "dist/index.esm.js",
   "scripts": {
     "build": "npm run clean && rollup --config",
