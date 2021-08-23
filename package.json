@@ -11,7 +11,9 @@
   ],
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "publish": "lerna publish",
+    "version": "lerna version --no-commit-hooks --no-push --changelog-preset angular --conventional-commits",
+    "version:force": "npm run version -- --force-publish",
+    "publish": "lerna publish from-package --ignore-prepublish --yes",
     "clean": "lerna clean"
   },
   "devDependencies": {

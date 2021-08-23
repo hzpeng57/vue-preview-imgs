@@ -1,5 +1,4 @@
 import Vue, { VueConstructor } from 'vue';
-
 const PhotoSwipe = require('photoswipe');
 const PhotoSwipeUIDefault = require('photoswipe/dist/photoswipe-ui-default');
 import * as PhotoSwipeUIDefaultType from 'photoswipe/dist/photoswipe-ui-default';
