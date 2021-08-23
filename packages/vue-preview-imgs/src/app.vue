@@ -47,17 +47,6 @@
     </div>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'PreviewImgs',
-};
+export default {}
 </script>
-
-<style>
-@import '~photoswipe/dist/photoswipe.css';
-@import '~photoswipe/dist/default-skin/default-skin.css';
-.pswp {
-  z-index: 999;
-}
-</style>
