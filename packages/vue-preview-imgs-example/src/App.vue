@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    <button @click="handleClick">test</button>
+    <button @click="handleClick">Click Me</button>
   </div>
 </template>
 
 <script>
+import { showPhoto } from 'vue-preview-imgs';
+
 export default {
-  name: 'app',
+  name: 'App',
   data() {
     return {
       options: {
-        share: false,
         images: [
           {
             src: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg',
@@ -18,7 +19,7 @@ export default {
             alt: 'picture1',
             title: 'Image Caption 1',
             w: 600,
-            h: 400,
+            h: 400
           },
           {
             src: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg',
@@ -34,11 +35,17 @@ export default {
   },
   methods: {
     handleClick() {
-      this.$PreviewImg(this.options)
+      this.$previewImg(this.options);
+      // or
+      // showPhoto(this.options);
+
     }
   }
 }
 </script>
 
 <style>
+#app {
+  padding: 100px;
+}
 </style>
