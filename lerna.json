@@ -1,8 +1,34 @@
 {
+  "version": "0.2.0",
   "npmClient": "yarn",
   "useWorkspaces": true,
   "packages": [
     "packages/*"
   ],
-  "version": "0.2.0"
+  "command": {
+    "version": {
+      "allowBranch": [
+        "master"
+      ],
+      "gitRemote": "origin",
+      "message": "release: bump v%v"
+    },
+    "publish": {
+      "registry": "https://nexus.xmxdev.com/repository/npm-registry/"
+    }
+  },
+  "changelog": {
+    "repoHost": "https://git.gametaptap.com",
+    "repo": "web-internal/tds-video-player",
+    "labels": {
+      "tag: new feature": ":rocket: New Feature",
+      "tag: breaking change": ":boom: Breaking Change",
+      "tag: bug fix": ":bug: Bug Fix",
+      "tag: enhancement": ":nail_care: Enhancement",
+      "tag: documentation": ":memo: Documentation",
+      "tag: underlying tools": ":hammer: Underlying Tools",
+      "tag: internal": ":house: Internal"
+    },
+    "cacheDir": ".changelog"
+  }
 }
