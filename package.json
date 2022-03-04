@@ -10,22 +10,23 @@
     "packages/*"
   ],
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
-    "version": "lerna version --no-commit-hooks --no-push --conventional-commits",
-    "version:force": "npm run version -- --force-publish",
-    "publish": "lerna publish from-package --ignore-prepublish --yes",
-    "clean": "lerna clean"
+    "commit": "changeset",
+    "version": "changeset version",
+    "publish": "changeset publish"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.29.1",
     "@typescript-eslint/parser": "^4.29.1",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
     "lerna": "^4.0.0",
     "prettier": "2.3.2",
-    "typescript": "^4.3.5",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0"
+    "typescript": "^4.3.5"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@changesets/changelog-git": "^0.1.10",
+    "@changesets/cli": "^2.21.0"
+  }
 }
