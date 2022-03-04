@@ -2,6 +2,7 @@ import vue from 'rollup-plugin-vue';
 // import css from 'rollup-plugin-css-only';
 import styles from 'rollup-plugin-styles';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
 import esbuild from 'rollup-plugin-esbuild';
 
 export default {
@@ -16,14 +17,15 @@ export default {
   context: '',
   external: ['vue'],
   plugins: [
-    nodeResolve(),
-    // css(),
-    styles(),
     vue({
       target: 'browser',
       css: false,
       compileTemplate: true,
     }),
+    commonjs(),
+    nodeResolve(),
+    // css(),
+    styles(),
     esbuild({
       target: 'es2015',
     }),
