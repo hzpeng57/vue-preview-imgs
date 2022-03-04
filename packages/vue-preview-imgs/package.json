@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/hzpeng57/vue-preview-imgs"
   },
-  "version": "0.2.2",
+  "version": "1.0.0",
   "main": "dist/index.esm.js",
   "scripts": {
     "build": "npm run clean && rollup --config",
