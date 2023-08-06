@@ -1,5 +1,17 @@
 # Change Log
 
+## 2.0.1
+
+### Patch Changes
+
+- 671f164: delete default exoprt
+
+## 2.0.0
+
+### Major Changes
+
+- 284fe84: upgrade photoswipe5
+
 ## 1.0.0
 
 ### Major Changes
