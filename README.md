@@ -1,74 +1,124 @@
 # vue-preview-imgs
 
-一个 Vue 的图片预览插件
+## Photoswipe for vue3 / vue 2.7
 
-A picture preview plugin for the Vue
+## Install
 
-## install
-
-```shell
-npm install ---save vue-preview-imgs
-npm install --save vue-preview-imgs ^0.2.2 # vue2
+```
+pnpm add vue-preview-imgs
 ```
 
-## example
+## Usage
 
-```js
-// main.js
-import { createApp } from 'vue';
-import App from './App.vue';
-import preview from 'vue-preview-imgs';
+script:
+```ts 
+import { Gallery } from "vue-preview-imgs";
 
-const app = createApp(App);
-app.use(preview);
-app.mount('#app');
+const list = [
+  {
+    href: 'xxx',
+    thumbnail: 'xxx',
+    width: 900,
+    height: 1200,
+    cropped: true,
+  },
+  ...
+]
 ```
 
-```vue
-<script setup>
-import { getCurrentInstance } from 'vue';
-
-const vm = getCurrentInstance().proxy;
-
-const options = {
-  images: [
-    {
-      src: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg',
-      msrc: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg',
-      alt: 'picture1',
-      title: 'Image Caption 1',
-      w: 600,
-      h: 400,
-    },
-    {
-      src: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg',
-      msrc: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg',
-      alt: 'picture2',
-      title: 'Image Caption 2',
-      w: 900,
-      h: 1200,
-    },
-  ],
-};
-const handleClick = () => {
-  vm.$previewImg(options);
-};
-</script>
+template:
+```html
+<Gallery :list="list" />
 ```
-## or
 
-```js
-import { showPhoto } from 'vue-preview-imgs'
+You can use `slot` to customize the display of each picture.
 
-showPhoto(options)
+You also can use `setGallery` to show the picture without `Gallery` component.
+
+```ts
+import { setGallery } from "vue-preview-imgs";
+
+const images = [
+  {
+    src: 'xxx',
+    msrc: 'xxx',
+    w: 900,
+    h: 1200,
+  },
+  ...
+];
+
+const lightbox = setGallery({
+  dataSource: images,
+});
+
+lightbox.loadAndOpen(0);
 ```
-## options
 
-```js
-options = {
-    images: [], // 要预览图片信息组成的数组，参考上面示例。更多信息参考https://photoswipe.com/
-    usePosition: false, // 设置为true时，参数images的每一项都要加上el参数，值为对应图片的DOM元素，开始和结束时从DOM元素的位置开始缩放
+## API
+
+### `setGallery`
+
+This method is used to create a PhotoSwipeLightbox instance.
+
+`setGallery(options, config)`
+
+* options
+
+The options of the PhotoSwipeLightbox instance. [detail](https://photoswipe.com/options/)
+
+* config
+
+```ts
+{
+  immediate?: boolean; // Whether to load the picture immediately after the instance is created
+  beforeInit?: (lightbox: PhotoSwipeLightbox) => void; // Called before the instance is initialized. You can call `addFilter` `on`.. in this function
 }
 ```
 
-[使用示例（example）](https://github.com/hzpeng57/vue-preview-imgs/tree/master/packages/example)
+### `Gallery` component
+
+Is the Container of the picture preview.
+
+```html
+<Gallery :list="list" :options=":options" :config="config" />
+```
+
+* list
+
+```ts
+const list: {
+  thumbnail: string;
+  href?: string;
+  src?: string; // data-pswp-src
+  width: number; // data-pswp-width
+  height: number; // data-pswp-height
+  cropped?: boolean; // data-pswp-cropped
+}[]
+```
+
+* options
+
+Is same as `setGallery` options
+
+* config
+
+Is same as `setGallery` config
+
+### `Item` component
+
+It's should be used in `Gallery` component.
+
+```html
+<Gallery :list="list">
+    <template #item="{ data }">
+       <Item v-bind="data"/>
+    </template>
+</Gallery>
+```
+or
+```html
+<Gallery>
+  <Item v-for="item in list" v-bind="item" />
+</Gallery>
+```

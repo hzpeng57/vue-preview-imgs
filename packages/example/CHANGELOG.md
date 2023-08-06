@@ -1,9 +1,12 @@
 # example
 
-## 0.0.1
+## 1.0.0
+
+### Major Changes
+
+- 284fe84: upgrade photoswipe5
 
 ### Patch Changes
 
-- 48ad821: 升级以支持 vue3 版本
-- Updated dependencies [48ad821]
+- Updated dependencies [284fe84]
   - vue-preview-imgs@1.0.0
