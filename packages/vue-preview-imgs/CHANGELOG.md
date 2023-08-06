@@ -4,6 +4,12 @@
 
 ### Major Changes
 
+- 284fe84: upgrade photoswipe5
+
+## 1.0.0
+
+### Major Changes
+
 - 48ad821: 升级以支持 vue3 版本
 
 All notable changes to this project will be documented in this file.

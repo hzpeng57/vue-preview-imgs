@@ -1,22 +1,26 @@
+const OFF = 0;
+const WARN = 1;
+const ERROR = 2;
+
 module.exports = {
   root: true,
   env: {
-    node: true,
     browser: true,
     es2021: true,
+    node: true,
   },
-  extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:prettier/recommended'],
-  parser: '@typescript-eslint/parser',
+  extends: ['plugin:vue/vue3-recommended', 'plugin:@typescript-eslint/recommended', 'eslint:recommended', 'prettier'],
+  plugins: ['@typescript-eslint', 'vue', 'prettier'],
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    ecmaVersion: 12,
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['@typescript-eslint'],
   rules: {
-    indent: ['error', 2],
-    'linebreak-style': ['error', 'unix'],
-    quotes: ['error', 'single'],
-    semi: ['error', 'always'],
-    '@typescript-eslint/no-var-requires': 0,
+    'prettier/prettier': ERROR,
+    '@typescript-eslint/no-unused-vars': WARN,
+    '@typescript-eslint/no-explicit-any': OFF,
+    'vue/multi-word-component-names': OFF,
   },
 };
