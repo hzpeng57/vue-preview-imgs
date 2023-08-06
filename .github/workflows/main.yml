@@ -12,17 +12,33 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Setup Node
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v3
         with:
-          node-version: '14.x'
-          registry-url: 'https://registry.npmjs.org'
-      - name: install pnpm
-        run: npm i -g pnpm@latest
-      - name: Install dependencies and build
-        run: pnpm install && pnpm run build -r
+          node-version: "16.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - uses: pnpm/action-setup@v2.0.1
+        name: Install pnpm
+        id: pnpm-install
+        with:
+          version: 7
+          run_install: false
+
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - run: pnpm install
+      - run: pnpm run build -r
       - name: check and publish
         run: if sh .ci/check-packages-can-publish.sh; then npm publish packages/vue-preview-imgs; fi
         env:
