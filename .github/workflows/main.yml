@@ -38,7 +38,7 @@ jobs:
             ${{ runner.os }}-pnpm-store-
 
       - run: pnpm install
-      - run: pnpm run build -r
+      - run: pnpm -r build
       - name: check and publish
         run: if sh .ci/check-packages-can-publish.sh; then npm publish packages/vue-preview-imgs; fi
         env:
