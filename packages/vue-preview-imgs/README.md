@@ -2,6 +2,10 @@
 
 ## Photoswipe for vue3 / vue 2.7
 
+[example](https://github.com/hzpeng57/vue-preview-imgs/tree/master/packages/example) 
+
+[live code](https://stackblitz.com/edit/vue-preview-imgs-example)
+
 ## Install
 
 ```
