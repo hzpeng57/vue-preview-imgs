@@ -1,6 +1,6 @@
 # vue-preview-imgs
 
->A picture preview plugin for the vue3
+## Photoswipe for vue3 / vue 2.7
 
 ## Install
 
@@ -26,7 +26,7 @@ const list = [
 ]
 ```
 
-template: 
+template:
 ```html
 <Gallery :list="list" />
 ```
@@ -63,7 +63,7 @@ This method is used to create a PhotoSwipeLightbox instance.
 
 `setGallery(options, config)`
 
-* options 
+* options
 
 The options of the PhotoSwipeLightbox instance. [detail](https://photoswipe.com/options/)
 
@@ -112,13 +112,13 @@ It's should be used in `Gallery` component.
 ```html
 <Gallery :list="list">
     <template #item="{ data }">
-       <Item v-bind="data"/>
+        <Item v-bind="data"/>
     </template>
 </Gallery>
 ```
 or
 ```html
 <Gallery>
-  <Item v-for="item in list" v-bind="item" />
+    <Item v-for="item in list" v-bind="item" />
 </Gallery>
 ```
