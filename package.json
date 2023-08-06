@@ -1,6 +1,6 @@
 {
   "name": "vue-preview-imgs",
-  "description": "A picture preview plugin for the Vue2",
+  "description": "A picture preview plugin for the Vue3",
   "repository": {
     "type": "git",
     "url": "https://github.com/hzpeng57/vue-preview-imgs"
@@ -15,19 +15,20 @@
     "publish": "changeset publish"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.29.1",
-    "@typescript-eslint/parser": "^4.29.1",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "lerna": "^4.0.0",
-    "prettier": "2.3.2",
-    "typescript": "^4.3.5"
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "can-npm-publish": "^1.3.6",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^8.10.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-vue": "^9.16.1",
+    "prettier": "3.0.1",
+    "typescript": "^4.9.3",
+    "vue-eslint-parser": "^9.3.1"
   },
   "license": "MIT",
   "dependencies": {
     "@changesets/changelog-git": "^0.1.10",
-    "@changesets/cli": "^2.21.0",
-    "can-npm-publish": "^1.3.6"
+    "@changesets/cli": "^2.21.0"
   }
 }
