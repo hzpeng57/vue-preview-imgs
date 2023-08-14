@@ -6,15 +6,15 @@ const images = [
     src: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg',
     msrc: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg',
     alt: 'picture2',
-    w: 900,
-    h: 1200,
+    w: 1024,
+    h: 683,
   },
   {
     src: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg',
     msrc: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg',
     alt: 'picture1',
-    w: 600,
-    h: 400,
+    w: 1023,
+    h: 683,
   },
 ];
 
@@ -41,15 +41,15 @@ const list:ItemOptions[] = [
   {
     href: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg',
     thumbnail: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg',
-    width: 900,
-    height: 1200,
+    width: 1024,
+    height: 683,
     cropped: true,
   },
   {
     href: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg',
     thumbnail: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg',
-    width: 600,
-    height: 400,
+    width: 1023,
+    height: 683,
   }
 ]
 </script>
